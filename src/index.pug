@@ -1,5 +1,6 @@
 html
 head
+    link(href='https://fonts.googleapis.com/css?family=Tomorrow:400,700&display=swap' rel='stylesheet')
     link(href='style.css' rel='stylesheet')
 body
 - var size = 50;
@@ -9,16 +10,16 @@ body
 .page
     .center
         .title CSS pure draw
-        button.btn-clean Очистить
+        button.btn-clean Clean
 
         input.option(type='radio' checked name="color" value='clean' id='option_color_clean')
-        label(for='option_color_clean') Ластик
+        label(for='option_color_clean') Eraser
         input.option(type='radio' name="color" value='red' id='option_color_red')
-        label(for='option_color_red') Красный
+        label(for='option_color_red') Red
         input.option(type='radio' name="color" value='green' id='option_color_green')
-        label(for='option_color_green') Зеленый
+        label(for='option_color_green') Green
         input.option(type='radio' name="color" value='blue' id='option_color_blue')
-        label(for='option_color_blue') Синий
+        label(for='option_color_blue') Blue
         .canva
             while n < size
                 - n++
