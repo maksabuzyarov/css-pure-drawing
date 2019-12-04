@@ -1,0 +1,31 @@
+html
+head
+    link(href='style.css' rel='stylesheet')
+body
+- var size = 50;
+- var n = 0;
+- var k = 0;
+
+.page
+    .center
+        .title CSS pure draw
+        button.btn-clean Очистить
+
+        input.option(type='radio' checked name="color" value='clean' id='option_color_clean')
+        label(for='option_color_clean') Ластик
+        input.option(type='radio' name="color" value='red' id='option_color_red')
+        label(for='option_color_red') Красный
+        input.option(type='radio' name="color" value='green' id='option_color_green')
+        label(for='option_color_green') Зеленый
+        input.option(type='radio' name="color" value='blue' id='option_color_blue')
+        label(for='option_color_blue') Синий
+        .canva
+            while n < size
+                - n++
+                .row
+                    -k = 0;
+                    while k < size
+                        - k++
+                        .col
+                            .cell
+            .canva__cover

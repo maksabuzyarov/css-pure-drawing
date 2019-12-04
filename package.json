@@ -4,11 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "gulp build",
+    "build": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "MaksAbuzyarov",
   "license": "MIT",
   "dependencies": {
-    "webpack": "^4.41.2"
+    "gulp": "^4.0.2",
+    "gulp-pug": "^4.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^4.0.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
