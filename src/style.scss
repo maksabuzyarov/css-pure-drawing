@@ -57,32 +57,42 @@ html, body {
 
 .option {
 
+  &[name='color'][value="white"] {
+
+    &:checked ~ .canva {
+
+      .cell:hover {
+        background-color: #fff;
+      }
+    }
+  }
+
   &[name='color'][value="red"] {
 
     &:checked ~ .canva {
 
       .cell:hover {
-        background-color: red;
+        background-color: #d01012;
       }
     }
   }
 
-  &[name='color'][value="green"] {
+  &[name='color'][value="yellow"] {
 
     &:checked ~ .canva {
 
       .cell:hover {
-        background-color: green;
+        background-color: #f6ec36;
       }
     }
   }
 
-  &[name='color'][value="blue"] {
+  &[name='color'][value="black"] {
 
     &:checked ~ .canva {
 
       .cell:hover {
-        background-color: blue;
+        background-color: #000;
       }
     }
   }

@@ -43,14 +43,17 @@ html, body {
     right: 0;
     border: 1px solid green; }
 
+.option[name='color'][value="white"]:checked ~ .canva .cell:hover {
+  background-color: #fff; }
+
 .option[name='color'][value="red"]:checked ~ .canva .cell:hover {
-  background-color: red; }
+  background-color: #d01012; }
 
-.option[name='color'][value="green"]:checked ~ .canva .cell:hover {
-  background-color: green; }
+.option[name='color'][value="yellow"]:checked ~ .canva .cell:hover {
+  background-color: #f6ec36; }
 
-.option[name='color'][value="blue"]:checked ~ .canva .cell:hover {
-  background-color: blue; }
+.option[name='color'][value="black"]:checked ~ .canva .cell:hover {
+  background-color: #000; }
 
 .btn-clean:active ~ .canva .cell {
   background-color: #fff;
