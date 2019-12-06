@@ -1,8 +1,18 @@
+// -------------------------------------
+//   region variables
+// -------------------------------------
+$colors: (
+        red: #d01012,
+        yellow: #f6ec36,
+        white: #fff,
+        black: #000
+);
+// endregion variables
+
 html, body {
   height: 100%;
   padding: 0;
   margin: 0;
-  bottom: 0;
 }
 
 .page {
@@ -34,6 +44,7 @@ html, body {
 
   display: block;
   position: relative;
+  margin-top: 10px;
 
   user-select: none;
 
@@ -50,63 +61,79 @@ html, body {
     left: 0;
     bottom: 0;
     right: 0;
-
-    border: 1px solid green;
   }
 }
 
-.option {
-
-  &[name='color'][value="white"] {
-
-    &:checked ~ .canva {
-
-      .cell:hover {
-        background-color: #fff;
-      }
-    }
-  }
-
-  &[name='color'][value="red"] {
-
-    &:checked ~ .canva {
-
-      .cell:hover {
-        background-color: #d01012;
-      }
-    }
-  }
-
-  &[name='color'][value="yellow"] {
-
-    &:checked ~ .canva {
-
-      .cell:hover {
-        background-color: #f6ec36;
-      }
-    }
-  }
-
-  &[name='color'][value="black"] {
-
-    &:checked ~ .canva {
-
-      .cell:hover {
-        background-color: #000;
-      }
-    }
-  }
+.clearfix {
+  display: table;
+  clear: both;
 }
 
-.btn-clean {
+.btn {
+  height: 40px;
+  padding: 5px 15px;
+
+  font-size: 16px;
+  color: #333;
+
+  background: #fff;
+  border: 0;
+
+  cursor: pointer;
+
+  margin-right: 5px;
+
   &:active {
+    background: #eee;
 
-    & ~ .canva .cell {
+    &[action='clean'] ~ .canva .cell {
       background-color: #fff;
       transition: all 0s 0s;
     }
   }
 }
+
+.option {
+
+  &[name='color'] {
+    display: none;
+
+    & + label {
+      float: right;
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      margin-left: 5px;
+
+      border: 1px solid #333;
+    }
+
+    @each $key, $color in $colors {
+
+      &[value="#{$key}"] {
+
+        & + label {
+          background: $color;
+        }
+
+        &:checked {
+
+          & + label {
+            box-shadow: inset 0 0 0 4px rgba(#000, .5);
+          }
+
+          & ~ .canva {
+
+            .cell:hover {
+              background-color: $color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 
 .row {
   display: flex;

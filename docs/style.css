@@ -1,8 +1,7 @@
 html, body {
   height: 100%;
   padding: 0;
-  margin: 0;
-  bottom: 0; }
+  margin: 0; }
 
 .page {
   display: -webkit-box;
@@ -29,6 +28,7 @@ html, body {
 .canva {
   display: block;
   position: relative;
+  margin-top: 10px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -40,25 +40,61 @@ html, body {
     top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
-    border: 1px solid green; }
+    right: 0; }
 
-.option[name='color'][value="white"]:checked ~ .canva .cell:hover {
-  background-color: #fff; }
+.clearfix {
+  display: table;
+  clear: both; }
 
-.option[name='color'][value="red"]:checked ~ .canva .cell:hover {
-  background-color: #d01012; }
+.btn {
+  height: 40px;
+  padding: 5px 15px;
+  font-size: 16px;
+  color: #333;
+  background: #fff;
+  border: 0;
+  cursor: pointer;
+  margin-right: 5px; }
+  .btn:active {
+    background: #eee; }
+    .btn:active[action='clean'] ~ .canva .cell {
+      background-color: #fff;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
 
-.option[name='color'][value="yellow"]:checked ~ .canva .cell:hover {
-  background-color: #f6ec36; }
-
-.option[name='color'][value="black"]:checked ~ .canva .cell:hover {
-  background-color: #000; }
-
-.btn-clean:active ~ .canva .cell {
-  background-color: #fff;
-  -webkit-transition: all 0s 0s;
-  transition: all 0s 0s; }
+.option[name='color'] {
+  display: none; }
+  .option[name='color'] + label {
+    float: right;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin-left: 5px;
+    border: 1px solid #333; }
+  .option[name='color'][value="red"] + label {
+    background: #d01012; }
+  .option[name='color'][value="red"]:checked + label {
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.5); }
+  .option[name='color'][value="red"]:checked ~ .canva .cell:hover {
+    background-color: #d01012; }
+  .option[name='color'][value="yellow"] + label {
+    background: #f6ec36; }
+  .option[name='color'][value="yellow"]:checked + label {
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.5); }
+  .option[name='color'][value="yellow"]:checked ~ .canva .cell:hover {
+    background-color: #f6ec36; }
+  .option[name='color'][value="white"] + label {
+    background: #fff; }
+  .option[name='color'][value="white"]:checked + label {
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.5); }
+  .option[name='color'][value="white"]:checked ~ .canva .cell:hover {
+    background-color: #fff; }
+  .option[name='color'][value="black"] + label {
+    background: #000; }
+  .option[name='color'][value="black"]:checked + label {
+    box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.5); }
+  .option[name='color'][value="black"]:checked ~ .canva .cell:hover {
+    background-color: #000; }
 
 .row {
   display: -webkit-box;

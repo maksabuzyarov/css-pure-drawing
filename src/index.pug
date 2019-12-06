@@ -2,6 +2,7 @@ html
 head
     link(href='https://fonts.googleapis.com/css?family=Tomorrow:400,700&display=swap' rel='stylesheet')
     link(href='style.css' rel='stylesheet')
+    title CSS Pure Draw
 body
 - var size = 50;
 - var n = 0;
@@ -10,15 +11,17 @@ body
 .page
     .center
         .title CSS pure draw
-        button.btn-clean Clean
-        input.option(type='radio' name="color" value='red' id='option_color_red')
-        label(for='option_color_red') Red
+        .clearfix
+        button.btn(action="clean") Clean
+        input.option(type='radio' name="color" value='red' id='option_color_red' checked)
+        label(for='option_color_red' title='Red')
         input.option(type='radio' name="color" value='yellow' id='option_color_yellow')
-        label(for='option_color_yellow') Yellow
-        input.option(type='radio' checked name="color" value='white' id='option_color_white')
-        label(for='option_color_white') White
+        label(for='option_color_yellow' title='Yellow')
+        input.option(type='radio' name="color" value='white' id='option_color_white')
+        label(for='option_color_white' title='White')
         input.option(type='radio' name="color" value='black' id='option_color_black')
-        label(for='option_color_black') Black
+        label(for='option_color_black' title='Black')
+        .clearfix
         .canva
             while n < size
                 - n++
