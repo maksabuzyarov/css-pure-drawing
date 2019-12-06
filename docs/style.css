@@ -102,8 +102,8 @@ html, body {
     float: right; }
 
 .option[name='smooth']:checked ~ .canva .cell:hover {
-  -webkit-transition-duration: 100ms;
-          transition-duration: 100ms; }
+  -webkit-transition-duration: 200ms;
+          transition-duration: 200ms; }
 
 .option[name='color'] {
   display: none; }
