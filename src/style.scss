@@ -7,7 +7,17 @@ $colors: (
         white: #fff,
         black: #000
 );
+
+$bth-height: 30px;
 // endregion variables
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+}
 
 html, body {
   height: 100%;
@@ -21,6 +31,7 @@ html, body {
   justify-content: center;
   height: 100%;
 
+  font-family: 'Tomorrow', sans-serif;
   color: #fff;
 
   background: linear-gradient(to bottom, #64C8BD, #094A6F);
@@ -30,7 +41,6 @@ html, body {
   padding: 30px 0;
 
   font-size: 60px;
-  font-family: 'Tomorrow', sans-serif;
   text-align: center;
 }
 
@@ -70,10 +80,11 @@ html, body {
 }
 
 .btn {
-  height: 30px;
+  height: $bth-height;
   padding: 5px 10px;
 
   font-size: 16px;
+  font-family: inherit;
   color: #333;
 
   background: #fff;
@@ -109,7 +120,42 @@ html, body {
   }
 }
 
+.input-btn {
+  display: none;
+
+  & + label {
+    height: $bth-height;
+    padding: 0 10px;
+
+    font-size: 16px;
+    line-height: $bth-height - 2px;
+    border: 1px solid #fff;
+
+    cursor: pointer;
+  }
+
+  &:checked + label {
+    color: #333;
+
+    background: #fff;
+  }
+
+  &_smooth {
+    & + label {
+      float: right;
+    }
+  }
+}
+
+
 .option {
+
+  &[name='smooth'] {
+
+    &:checked ~ .canva .cell:hover {
+      transition-duration: 100ms;
+    }
+  }
 
   &[name='color'] {
     display: none;
@@ -117,8 +163,8 @@ html, body {
     & + label {
       float: right;
       display: inline-block;
-      width: 30px;
-      height: 30px;
+      width: $bth-height;
+      height: $bth-height;
       margin-left: 5px;
 
       border: 1px solid #333;

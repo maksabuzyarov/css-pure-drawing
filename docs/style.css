@@ -1,3 +1,9 @@
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html {
+  font-size: 15px; }
+
 html, body {
   height: 100%;
   padding: 0;
@@ -11,6 +17,7 @@ html, body {
   -webkit-box-pack: center;
           justify-content: center;
   height: 100%;
+  font-family: 'Tomorrow', sans-serif;
   color: #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(#64C8BD), to(#094A6F));
   background: linear-gradient(to bottom, #64C8BD, #094A6F); }
@@ -18,7 +25,6 @@ html, body {
 .title {
   padding: 30px 0;
   font-size: 60px;
-  font-family: 'Tomorrow', sans-serif;
   text-align: center; }
 
 .center {
@@ -51,6 +57,7 @@ html, body {
   height: 30px;
   padding: 5px 10px;
   font-size: 16px;
+  font-family: inherit;
   color: #333;
   background: #fff;
   border: 0;
@@ -78,6 +85,25 @@ html, body {
       background-color: #000;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
+
+.input-btn {
+  display: none; }
+  .input-btn + label {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 28px;
+    border: 1px solid #fff;
+    cursor: pointer; }
+  .input-btn:checked + label {
+    color: #333;
+    background: #fff; }
+  .input-btn_smooth + label {
+    float: right; }
+
+.option[name='smooth']:checked ~ .canva .cell:hover {
+  -webkit-transition-duration: 100ms;
+          transition-duration: 100ms; }
 
 .option[name='color'] {
   display: none; }
