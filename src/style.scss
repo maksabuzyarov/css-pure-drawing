@@ -90,6 +90,22 @@ html, body {
       background-color: #fff;
       transition: all 0s 0s;
     }
+
+    &[action='fill'] {
+      & ~ [name='color']:checked {
+
+        @each $key, $color in $colors {
+
+          &[value="#{$key}"] {
+
+            & ~ .canva .cell {
+              background-color: $color;
+              transition: all 0s 0s;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
