@@ -101,11 +101,15 @@ html, body {
     color: #333;
     background: #fff; }
   .input-btn_option + label {
+    margin-right: 5px;
     float: right; }
 
 .option[name='smooth']:checked ~ .canva .cell:hover {
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms; }
+
+.option[name='rounded']:checked ~ .canva .cell {
+  border-radius: 50%; }
 
 .option[name='color'] {
   display: none; }
@@ -153,6 +157,7 @@ html, body {
 .cell {
   padding-bottom: 100%;
   background-color: rgba(255, 255, 255, 0.99);
+  border-radius: 0;
   -webkit-transition: background 0s 1000000s;
   transition: background 0s 1000000s; }
   .cell:hover {

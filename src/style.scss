@@ -146,6 +146,7 @@ html, body {
   &_option {
 
     & + label {
+      margin-right: 5px;
 
       float: right;
     }
@@ -159,6 +160,13 @@ html, body {
 
     &:checked ~ .canva .cell:hover {
       transition-duration: 200ms;
+    }
+  }
+
+  &[name='rounded'] {
+
+    &:checked ~ .canva .cell {
+      border-radius: 50%;
     }
   }
 
@@ -216,6 +224,7 @@ html, body {
   padding-bottom: 100%;
 
   background-color: rgba(#fff, 0.99);
+  border-radius: 0;
 
   transition: background 0s 1000000s;
 
