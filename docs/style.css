@@ -5,7 +5,7 @@ html {
   font-size: 15px; }
 
 html, body {
-  height: 100%;
+  min-height: 100%;
   padding: 0;
   margin: 0; }
 
@@ -16,14 +16,15 @@ html, body {
           align-items: center;
   -webkit-box-pack: center;
           justify-content: center;
-  height: 100%;
+  min-height: 100%;
+  padding: 30px 0;
   font-family: 'Tomorrow', sans-serif;
   color: #fff;
   background: -webkit-gradient(linear, left top, left bottom, from(#64C8BD), to(#094A6F));
   background: linear-gradient(to bottom, #64C8BD, #094A6F); }
 
 .title {
-  padding: 30px 0;
+  margin-bottom: 30px;
   font-size: 60px;
   text-align: center; }
 
@@ -36,6 +37,7 @@ html, body {
   display: block;
   position: relative;
   margin-top: 10px;
+  background: #fff;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -98,7 +100,7 @@ html, body {
   .input-btn:checked + label {
     color: #333;
     background: #fff; }
-  .input-btn_smooth + label {
+  .input-btn_option + label {
     float: right; }
 
 .option[name='smooth']:checked ~ .canva .cell:hover {
