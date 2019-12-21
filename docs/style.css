@@ -66,24 +66,48 @@ html, body {
   margin-right: 5px; }
   .btn:active {
     background: #eee; }
-    .btn:active[action='clean'] ~ .canva .cell {
-      background-color: #fff;
+    .btn:active[action='clean'] ~ .draw-window .cell {
+      background: #fff;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
-    .btn:active[action='fill'] ~ [name='color']:checked[value="red"] ~ .canva .cell {
-      background-color: #d01012;
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="red"] ~ .canva .cell {
+      background: #e6261f;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
-    .btn:active[action='fill'] ~ [name='color']:checked[value="yellow"] ~ .canva .cell {
-      background-color: #f6ec36;
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="orange"] ~ .canva .cell {
+      background: #eb7532;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
-    .btn:active[action='fill'] ~ [name='color']:checked[value="white"] ~ .canva .cell {
-      background-color: #fff;
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="yellow"] ~ .canva .cell {
+      background: #f7d038;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
-    .btn:active[action='fill'] ~ [name='color']:checked[value="black"] ~ .canva .cell {
-      background-color: #000;
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="green"] ~ .canva .cell {
+      background: #a3e048;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="turquoise"] ~ .canva .cell {
+      background: #49da9a;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="cyan"] ~ .canva .cell {
+      background: #34bbe6;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="blue"] ~ .canva .cell {
+      background: #4355db;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="purple"] ~ .canva .cell {
+      background: #d23be7;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="white"] ~ .canva .cell {
+      background: #fff;
+      -webkit-transition: all 0s 0s;
+      transition: all 0s 0s; }
+    .btn:active[action='fill'] ~ .draw-window [name='color']:checked[value="black"] ~ .canva .cell {
+      background: #000;
       -webkit-transition: all 0s 0s;
       transition: all 0s 0s; }
 
@@ -100,50 +124,105 @@ html, body {
     color: #333;
     background: #fff; }
   .input-btn_option + label {
-    margin-right: 5px;
+    margin-left: 5px;
     float: right; }
 
-.option[name='smooth']:checked ~ .canva .cell:hover {
+.option[name='smooth']:checked ~ .draw-window .cell:hover {
   -webkit-transition-duration: 200ms;
           transition-duration: 200ms; }
 
-.option[name='rounded']:checked ~ .canva .cell {
+.option[name='rounded']:checked ~ .draw-window .cell {
   border-radius: 50%; }
 
-.option[name='color'] {
+.option[name='color'][value="red"]:checked ~ .canva .cell:hover {
+  background: #e6261f; }
+
+.option[name='color'][value="orange"]:checked ~ .canva .cell:hover {
+  background: #eb7532; }
+
+.option[name='color'][value="yellow"]:checked ~ .canva .cell:hover {
+  background: #f7d038; }
+
+.option[name='color'][value="green"]:checked ~ .canva .cell:hover {
+  background: #a3e048; }
+
+.option[name='color'][value="turquoise"]:checked ~ .canva .cell:hover {
+  background: #49da9a; }
+
+.option[name='color'][value="cyan"]:checked ~ .canva .cell:hover {
+  background: #34bbe6; }
+
+.option[name='color'][value="blue"]:checked ~ .canva .cell:hover {
+  background: #4355db; }
+
+.option[name='color'][value="purple"]:checked ~ .canva .cell:hover {
+  background: #d23be7; }
+
+.option[name='color'][value="white"]:checked ~ .canva .cell:hover {
+  background: #fff; }
+
+.option[name='color'][value="black"]:checked ~ .canva .cell:hover {
+  background: #000; }
+
+.draw-window {
+  position: relative; }
+
+.color {
   display: none; }
-  .option[name='color'] + label {
+  .color + label {
+    position: absolute;
+    left: -40px;
     float: right;
     display: inline-block;
     width: 30px;
     height: 30px;
-    margin-left: 5px;
+    margin-top: -35px;
     border: 1px solid #333;
-    cursor: pointer; }
-  .option[name='color'][value="red"] + label {
-    background: #d01012; }
-  .option[name='color'][value="red"]:checked + label {
+    cursor: 10; }
+    .color + label:nth-child(2) {
+      top: 35px; }
+    .color + label:nth-child(4) {
+      top: 70px; }
+    .color + label:nth-child(6) {
+      top: 105px; }
+    .color + label:nth-child(8) {
+      top: 140px; }
+    .color + label:nth-child(10) {
+      top: 175px; }
+    .color + label:nth-child(12) {
+      top: 210px; }
+    .color + label:nth-child(14) {
+      top: 245px; }
+    .color + label:nth-child(16) {
+      top: 280px; }
+    .color + label:nth-child(18) {
+      top: 315px; }
+    .color + label:nth-child(20) {
+      top: 350px; }
+    .color + label:nth-child(22) {
+      top: 385px; }
+  .color:checked + label {
     box-shadow: 0 0 1px 2px #10fdff; }
-  .option[name='color'][value="red"]:checked ~ .canva .cell:hover {
-    background-color: #d01012; }
-  .option[name='color'][value="yellow"] + label {
-    background: #f6ec36; }
-  .option[name='color'][value="yellow"]:checked + label {
-    box-shadow: 0 0 1px 2px #10fdff; }
-  .option[name='color'][value="yellow"]:checked ~ .canva .cell:hover {
-    background-color: #f6ec36; }
-  .option[name='color'][value="white"] + label {
+  .color[value="red"] + label {
+    background: #e6261f; }
+  .color[value="orange"] + label {
+    background: #eb7532; }
+  .color[value="yellow"] + label {
+    background: #f7d038; }
+  .color[value="green"] + label {
+    background: #a3e048; }
+  .color[value="turquoise"] + label {
+    background: #49da9a; }
+  .color[value="cyan"] + label {
+    background: #34bbe6; }
+  .color[value="blue"] + label {
+    background: #4355db; }
+  .color[value="purple"] + label {
+    background: #d23be7; }
+  .color[value="white"] + label {
     background: #fff; }
-  .option[name='color'][value="white"]:checked + label {
-    box-shadow: 0 0 1px 2px #10fdff; }
-  .option[name='color'][value="white"]:checked ~ .canva .cell:hover {
-    background-color: #fff; }
-  .option[name='color'][value="black"] + label {
+  .color[value="black"] + label {
     background: #000; }
-  .option[name='color'][value="black"]:checked + label {
-    box-shadow: 0 0 1px 2px #10fdff; }
-  .option[name='color'][value="black"]:checked ~ .canva .cell:hover {
-    background-color: #000; }
 
 .row {
   display: -webkit-box;
@@ -155,11 +234,11 @@ html, body {
 
 .cell {
   padding-bottom: 100%;
-  background-color: rgba(255, 255, 255, 0.99);
+  background: rgba(255, 255, 255, 0.99);
   border-radius: 0;
   -webkit-transition: background 0s 1000000s;
   transition: background 0s 1000000s; }
   .cell:hover {
-    background-color: #fff;
+    background: #fff;
     -webkit-transition: all 0s 0s;
     transition: all 0s 0s; }

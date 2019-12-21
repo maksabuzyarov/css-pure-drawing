@@ -7,33 +7,35 @@ body
 - var size = 50;
 - var n = 0;
 - var k = 0;
+- var colors = ['red', 'orange', 'yellow', 'green', 'turquoise', 'cyan', 'blue', 'purple', 'white', 'black'];
 
 .page
     .center
         .title CSS pure draw
-        .clearfix
-        button.btn(action="clean") Clean
-        button.btn(action="fill") Fill
-        input.option(type='radio' name="color" value='red' id='option_color_red' checked)
-        label(for='option_color_red' title='Red')
-        input.option(type='radio' name="color" value='yellow' id='option_color_yellow')
-        label(for='option_color_yellow' title='Yellow')
-        input.option(type='radio' name="color" value='white' id='option_color_white')
-        label(for='option_color_white' title='White')
-        input.option(type='radio' name="color" value='black' id='option_color_black')
-        label(for='option_color_black' title='Black')
-        input.option.input-btn.input-btn_option(type='checkbox' name="rounded" id='option_rounded')
-        label(for='option_rounded' title='Rounded dots') Rounded
-        input.option.input-btn.input-btn_option(type='checkbox' name="smooth" id='option_smooth')
-        label(for='option_smooth' title='Smooth color') Smooth
-        .clearfix
-        .canva
-            while n < size
-                - n++
-                .row
-                    -k = 0;
-                    while k < size
-                        - k++
-                        .col
-                            .cell
-            .canva__cover
+
+        .window
+            .clearfix
+            button.btn(action="clean") Clean
+            button.btn(action="fill") Fill
+
+            input.option.input-btn.input-btn_option(type='checkbox' name="rounded" id='option_rounded')
+            label(for='option_rounded' title='Rounded dots') Rounded
+            input.option.input-btn.input-btn_option(type='checkbox' name="smooth" id='option_smooth')
+            label(for='option_smooth' title='Smooth color') Smooth
+            .clearfix
+            .draw-window
+                each val, index in colors
+                    input.option.color(type='radio' name="color" value=val id='option_color_'+val)
+                    label(for='option_color_'+val title=val)
+
+
+                .canva
+                    while n < size
+                        - n++
+                        .row
+                            -k = 0;
+                            while k < size
+                                - k++
+                                .col
+                                    .cell
+                    .canva__cover
